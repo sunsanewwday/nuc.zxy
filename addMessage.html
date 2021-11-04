@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function check1() {
+				var u1 = document.getElementById("1").value;
+				var u1Tip = document.getElementById("1Tip");
+				var reg = /^[a-zA-Z\u4e00-\u9fa5]{2,30}$/;
+				if(!reg.test(u1)) {
+					u1Tip.innerHTML = "输入不合法！";
+					u1Tip.style = "color:red";
+				} else {
+					u1Tip.innerHTML = "";
+				}
+			}
+			function check2() {
+				var u2 = document.getElementById("2").value;
+				var u2Tip = document.getElementById("2Tip");
+				var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+				if(!reg.test(u2)) {
+					u2Tip.innerHTML = "输入不合法！";
+					u2Tip.style = "color:red";
+				} else {
+					u2Tip.innerHTML = "";
+				}
+			}
+			function check3() {
+				var u3 = document.getElementById("3").value;
+				var u3Tip = document.getElementById("3Tip");
+				var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+				if(!reg.test(u3)) {
+					u3Tip.innerHTML = "输入不合法！";
+					u3Tip.style = "color:red";
+				} else {
+					u3Tip.innerHTML = "";
+				}
+			}
+			function check4() {
+				var u4 = document.getElementById("4").value;
+				var u4Tip = document.getElementById("4Tip");
+				var reg = /^[\u4e00-\u9fa5]{2,6}$/;
+				if(!reg.test(u4)) {
+					u4Tip.innerHTML = "输入不合法！";
+					u4Tip.style = "color:red";
+				} else {
+					u4Tip.innerHTML = "";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="login.html">首页</a>
+				</li>
+				<li>
+					<a href="#">参赛信息录入</a>
+				</li>
+			</ul>
+		</div>
+		<div class="formbody">
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li><label>竞赛类别</label>
+						<div class="vocation">
+							<select class="select1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+						</div>
+					</li>
+					<li><label>年度<b>*</b></label>
+						<div class="vocation">
+							<select class="select1">
+								<option>2021年</option>
+								<option>2020年</option>
+								<option>2019年</option>
+								<option>2018年</option>
+								<option>2017年</option>							
+							</select>
+						</div>
+					</li>		
+					<li>
+						<label>题目<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" placeholder="2-30个汉字，字母组合" id="1" onblur="check1()" />
+						<i id="1Tip"></i>
+					</li>
+					
+					<li>
+						<label>组长<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" placeholder="请输入2-6个汉字"  id="2" onblur="check2()"/>
+                        <i id="2Tip"></i>
+					</li>
+					<li>
+						<label>组员<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" placeholder="请输入2-6个汉字"  id="3" onblur="check3()"/>
+                        <i id="3Tip"></i>
+					</li>
+					<li><label>获奖等级</label>
+						<div class="vocation">
+							<select class="select3">
+								<option>一等</option>
+								<option>二等</option>
+								<option>三等</option>
+								<option>优秀奖</option>
+								<option>无</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label>指导老师<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" placeholder="请输入2-6个汉字"  id="4" onblur="check4()"/>
+                        <i id="4Tip"></i>
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="录入信息" /></li>
+				</ul>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$("#usual1 ul").idTabs();
+		</script>
+
+		<script type="text/javascript">
+			$('.tablelist tbody tr:odd').addClass('odd');
+		</script>
+
+		</div>
+
+	</body>
+
+</html>
